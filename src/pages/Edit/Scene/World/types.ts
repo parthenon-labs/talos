@@ -19,31 +19,31 @@ export interface BlockMapValue {
 export const blockMap: Record<BlockType, BlockMapValue> = {
   floor: {
     name: 'floor_block',
-    text: '普通陆地',
+    text: 'Ground',
   },
   road: {
     name: 'road_block',
-    text: '直路',
+    text: 'Straight path',
   },
   rotateRoad: {
     name: 'rotateRoad_block',
-    text: '转弯路',
+    text: 'Corner path',
   },
   woodenBridge: {
     name: 'woodenBridge_block',
-    text: '木桥',
+    text: 'Wooden bridge',
   },
   stoneBridge: {
     name: 'stoneBridge_block',
-    text: '石桥',
+    text: 'Stone bridge',
   },
   coin: {
     name: 'coin_block',
-    text: '金币',
+    text: 'Coin',
   },
   treeFloor: {
     name: 'treeFloor_block',
-    text: '长有🌲的陆地',
+    text: 'Forest ground',
     scale: 1.7,
     y: -1.2,
   },

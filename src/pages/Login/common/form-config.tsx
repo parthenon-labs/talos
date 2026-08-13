@@ -13,7 +13,7 @@ const phoneDOM = (mb: boolean = false) => {
   const className = mb ? 'flex-1' : 'mb-10';
   const props = {
     required: true,
-    placeholder: '手机号',
+    placeholder: 'Phone number',
     fullWidth: true,
     name: 'phone',
     key: 'phone',
@@ -26,7 +26,7 @@ const phoneDOM = (mb: boolean = false) => {
 const codeDOM = (mb: boolean = false) => (
   <TextField
     required
-    placeholder="验证码"
+    placeholder="Verification code"
     fullWidth
     name="code"
     key="code"
@@ -37,7 +37,7 @@ const codeDOM = (mb: boolean = false) => (
 const passWordDOM = (mb: boolean = false) => (
   <TextField
     required
-    placeholder="密码"
+    placeholder="Password"
     fullWidth
     name="password"
     key="password"

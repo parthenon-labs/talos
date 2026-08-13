@@ -56,7 +56,7 @@ module.exports = merge(webConfig, webProdConfig, {
     }),
 
     new HtmlWebpackPlugin({
-      title: '小灯coding',
+      title: 'Talos',
       favicon: resolve(__dirname, '../../public/icons/logo.png'),
       filename: 'index.html',
       template: './public/index.ejs',

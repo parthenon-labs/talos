@@ -4,13 +4,13 @@ import { CSSProperties } from 'react';
 import { localStaticBaseUrl } from '@/utils/constant';
 
 const iconMap = new Map([
-  ['角色', 'juese'],
-  ['判断', 'kongzhi'],
-  ['循环', 'zhence'],
-  ['变量', 'bianliang'],
-  ['数学', 'yunsuan'],
-  ['列表', 'liebiao'],
-  ['函数', 'hanshu'],
+  ['Character', 'juese'],
+  ['Logic', 'kongzhi'],
+  ['Loops', 'zhence'],
+  ['Variables', 'bianliang'],
+  ['Math', 'yunsuan'],
+  ['Lists', 'liebiao'],
+  ['Functions', 'hanshu'],
 ]);
 
 class CustomCategory extends Blockly.ToolboxCategory {

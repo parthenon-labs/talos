@@ -18,10 +18,10 @@ export const ModalLogin = () => {
   return pathname === '/login' ? null : (
     <div>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>主人请登录，便于您下次快速找到我</DialogTitle>
+        <DialogTitle>Sign in to save your progress</DialogTitle>
         <DialogContent style={{ width: '400px' }}>{login}</DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>再看看</Button>
+          <Button onClick={handleClose}>Maybe later</Button>
         </DialogActions>
       </Dialog>
     </div>

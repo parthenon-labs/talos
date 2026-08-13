@@ -7,8 +7,8 @@ import customBlock from './customBlock';
 
 Blockly.Blocks.import_control = <Blockly.Block>{
   init() {
-    this.appendDummyInput().appendField('导入角色模块');
-    this.setTooltip('导入角色控制模块，只有导入了控制模块才可以使用控制指令');
+    this.appendDummyInput().appendField('Import character module');
+    this.setTooltip('Import the character controls before using movement commands');
     this.setColour('#f46767');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -17,8 +17,8 @@ Blockly.Blocks.import_control = <Blockly.Block>{
 
 Blockly.Blocks.moveForward = <Blockly.Block>{
   init() {
-    this.appendDummyInput().appendField('前进      ');
-    this.setTooltip('控制角色前进');
+    this.appendDummyInput().appendField('Move forward');
+    this.setTooltip('Move the character forward');
     this.setColour('#f46767');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -27,8 +27,8 @@ Blockly.Blocks.moveForward = <Blockly.Block>{
 
 Blockly.Blocks.turnLeft = <Blockly.Block>{
   init() {
-    this.appendDummyInput().appendField('左转      ');
-    this.setTooltip('控制角色左转');
+    this.appendDummyInput().appendField('Turn left');
+    this.setTooltip('Turn the character left');
     this.setColour('#f46767');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -37,8 +37,8 @@ Blockly.Blocks.turnLeft = <Blockly.Block>{
 
 Blockly.Blocks.turnRight = <Blockly.Block>{
   init() {
-    this.appendDummyInput().appendField('右转      ');
-    this.setTooltip('控制角色右转');
+    this.appendDummyInput().appendField('Turn right');
+    this.setTooltip('Turn the character right');
     this.setColour('#f46767');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -47,8 +47,8 @@ Blockly.Blocks.turnRight = <Blockly.Block>{
 
 Blockly.Blocks.collectCoin = <Blockly.Block>{
   init() {
-    this.appendDummyInput().appendField('收集金币');
-    this.setTooltip('控制角色跳跃收集金币');
+    this.appendDummyInput().appendField('Collect coin');
+    this.setTooltip('Jump and collect a coin');
     this.setColour('#f46767');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -57,8 +57,8 @@ Blockly.Blocks.collectCoin = <Blockly.Block>{
 
 Blockly.Blocks.isCoin = <Blockly.Block>{
   init() {
-    this.appendDummyInput().appendField('是否有金币');
-    this.setTooltip('判断角色是否已经到达金币下方');
+    this.appendDummyInput().appendField('Coin here?');
+    this.setTooltip('Check whether the character is standing beneath a coin');
     this.setColour('#f46767');
     this.setOutput(true, 'Boolean');
   },
@@ -66,8 +66,8 @@ Blockly.Blocks.isCoin = <Blockly.Block>{
 
 Blockly.Blocks.isBlocked = <Blockly.Block>{
   init() {
-    this.appendDummyInput().appendField('是否被阻挡');
-    this.setTooltip('判断角色是否被地形所阻挡');
+    this.appendDummyInput().appendField('Blocked ahead?');
+    this.setTooltip('Check whether terrain blocks the character');
     this.setColour('#f46767');
     this.setOutput(true, 'Boolean');
   },
@@ -75,8 +75,8 @@ Blockly.Blocks.isBlocked = <Blockly.Block>{
 
 Blockly.Blocks.isRightBlocked = <Blockly.Block>{
   init() {
-    this.appendDummyInput().appendField('右侧是否被阻挡');
-    this.setTooltip('判断角色右侧是否被地形所阻挡');
+    this.appendDummyInput().appendField('Blocked on right?');
+    this.setTooltip('Check whether terrain blocks the character on the right');
     this.setColour('#f46767');
     this.setOutput(true, 'Boolean');
   },
@@ -84,11 +84,11 @@ Blockly.Blocks.isRightBlocked = <Blockly.Block>{
 
 Blockly.Blocks.custom_if = <Blockly.Block>{
   init() {
-    this.appendValueInput('if').setCheck('Boolean').appendField('如果');
-    this.appendStatementInput('then').setCheck(null).appendField('执行');
+    this.appendValueInput('if').setCheck('Boolean').appendField('If');
+    this.appendStatementInput('then').setCheck(null).appendField('Do');
     this.setInputsInline(true);
     this.setColour(230);
-    this.setTooltip('如果值为真，执行一些语句');
+    this.setTooltip('Run statements when the value is true');
   },
 };
 

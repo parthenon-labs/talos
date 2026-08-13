@@ -11,9 +11,9 @@ const NotFound = () => (
     )}
   >
     <img className="w-[400px]" src={notFoundImg} alt="404" />
-    <p className="py-4 text-lg text-primary">页面找不到了~</p>
+    <p className="py-4 text-lg text-primary">Page not found</p>
     <Link to="/">
-      <Button variant="contained">返回首页</Button>
+      <Button variant="contained">Back to home</Button>
     </Link>
   </div>
 );

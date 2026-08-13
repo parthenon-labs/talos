@@ -1,7 +1,7 @@
 export default [
   {
     type: 'procedures_callreturn',
-    message0: '自定义的块',
+    message0: 'Custom block',
     colour: 160,
   },
 ];

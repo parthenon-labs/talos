@@ -1,70 +1,70 @@
 [
   {
-    "text": "While循环",
+    "text": "While Loops",
     "_id": "1",
     "icon": "static/images/list-icon/Robot-1-g.svg",
     "children": [
       {
-        "text": "使用while循环",
+        "text": "Using While Loops",
         "_id": "1",
         "icon": "static/images/list-icon/Robot-1.svg"
       },
       {
-        "text": "while循环与条件语句",
+        "text": "Loops and Conditions",
         "_id": "2",
         "icon": "static/images/list-icon/robot-2-b.svg"
       },
       {
-        "text": "嵌套循环",
+        "text": "Nested Loops",
         "_id": "3",
         "icon": "static/images/list-icon/robot-3-7.svg"
       }
     ]
   },
   {
-    "text": "函数进阶",
+    "text": "Advanced Functions",
     "_id": "2",
     "icon": "static/images/list-icon/robot-3-g-help.svg",
     "children": [
       {
-        "text": "函数的参数",
+        "text": "Function Parameters",
         "_id": "1",
         "icon": "static/images/list-icon/robot-3-g-search.svg"
       },
       {
-        "text": "函数的默认参数",
+        "text": "Default Parameters",
         "_id": "2",
         "icon": "static/images/list-icon/robot-3-g.svg"
       },
       {
-        "text": "将角色放置特定位置",
+        "text": "Placing the Character",
         "_id": "3",
         "icon": "static/images/list-icon/robot-3-help.svg"
       }
     ]
   },
   {
-    "text": "变量",
+    "text": "Variables",
     "_id": "3",
     "icon": "static/images/list-icon/robot-3-police.svg",
     "children": [
       {
-        "text": "追踪记录",
+        "text": "Tracking Values",
         "_id": "1",
         "icon": "static/images/list-icon/robot-3-warning.svg"
       },
       {
-        "text": "使值增大",
+        "text": "Updating Values",
         "_id": "2",
         "icon": "static/images/list-icon/Robot-b-1.svg"
       },
       {
-        "text": "使值递增",
+        "text": "Incrementing Values",
         "_id": "3",
         "icon": "static/images/list-icon/Robot-bad-1-b.svg"
       },
       {
-        "text": "`+=`运算符",
+        "text": "The `+=` Operator",
         "_id": "4",
         "icon": "static/images/list-icon/Robot-b.svg"
       }

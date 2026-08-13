@@ -1,36 +1,36 @@
 [
   {
-    "text": "构建世界",
+    "text": "Build a World",
     "_id": "1",
     "icon": "static/images/list-icon/Robot-1-g.svg",
     "children": [
       {
-        "text": "放置砖块",
+        "text": "Place Tiles",
         "_id": "1",
         "icon": "static/images/list-icon/Robot-1.svg"
       },
       {
-        "text": "砖块的类型",
+        "text": "Tile Types",
         "_id": "2",
         "icon": "static/images/list-icon/robot-2-b.svg"
       },
       {
-        "text": "放置金币与角色",
+        "text": "Coins and Characters",
         "_id": "3",
         "icon": "static/images/list-icon/robot-3-7.svg"
       },
       {
-        "text": "构建一个属于自己的场景",
+        "text": "Create Your Scene",
         "_id": "4",
         "icon": "static/images/list-icon/robot-3-g-search.svg"
       },
       {
-        "text": "堆叠砖块",
+        "text": "Stack Tiles",
         "_id": "5",
         "icon": "static/images/list-icon/robot-3-g.svg"
       },
       {
-        "text": "放置装饰砖块",
+        "text": "Add Decorations",
         "_id": "6",
         "icon": "static/images/list-icon/robot-3-help.svg"
       }

@@ -36,7 +36,7 @@ const MusicButton = () => {
         onClose={handleClose}
       >
         <MenuItem>
-          背景音乐
+          Music
           <Switch
             checked={bgMusicPlaying}
             onChange={({ target }) => {
@@ -47,7 +47,7 @@ const MusicButton = () => {
         </MenuItem>
 
         <MenuItem>
-          声音效果
+          Sound effects
           <Switch
             checked={effectMusicPlaying}
             onChange={({ target }) => {

@@ -10,7 +10,7 @@ import { CourseCacheKeys } from '@/apis/queryKeys';
 import Card from './Card';
 
 const CourseCategoryList = [
-  { name: '学习', key: 'study' },
+  { name: 'Learn', key: 'study' },
   // { name: '挑战', key: 'challenge' },
 ] as const;
 

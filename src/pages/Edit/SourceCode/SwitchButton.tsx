@@ -8,11 +8,11 @@ import { switchMode, setBlocklyCodeChanged } from '../store';
 const buttonItem = [
   {
     key: 'blockly',
-    text: '积木模式',
+    text: 'Blocks',
   },
   {
     key: 'python',
-    text: 'Python模式',
+    text: 'Python',
   },
 ] as const;
 

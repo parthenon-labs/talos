@@ -45,12 +45,12 @@ const Header = () => {
                 'border-r-2 border-solid border-current': !isCenter,
               })}
             >
-              <img src={logoImage} alt="京程一灯" className="w-[140px]" />
+              <img src={logoImage} alt="Talos" className="w-[140px]" />
             </div>
             {!isCenter && (
               <>
                 <MenuButton onClick={() => dispatch(toggleChapter())}>
-                  <Tooltip title="章节列表" arrow>
+                  <Tooltip title="Lessons" arrow>
                     <MenuIcon />
                   </Tooltip>
                 </MenuButton>
@@ -65,7 +65,7 @@ const Header = () => {
               <>
                 <FullScreenButton />
                 <MenuButton onClick={() => startTransition(() => navigate(-1))}>
-                  <Tooltip title="返回首页" arrow>
+                  <Tooltip title="Back to home" arrow>
                     <HomeIcon className="h-6 w-6" />
                   </Tooltip>
                 </MenuButton>
@@ -74,7 +74,7 @@ const Header = () => {
 
             {/* <Link to="/login">
               <MenuButton>
-                <Tooltip title="登录" arrow>
+                <Tooltip title="Sign in" arrow>
                   <LoginIcon />
                 </Tooltip>
               </MenuButton>

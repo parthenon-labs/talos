@@ -43,7 +43,7 @@ export const useLogin = (param?: string) => {
 
   const [loginWxUrl, setLoginWxUrl] = useState<string>();
 
-  const [signupCode, setSignupCode] = useState<string>('获取验证码');
+  const [signupCode, setSignupCode] = useState<string>('Get code');
   const { Tip, setOpen } = useTip({ status: false, msg: '' });
   const navigate = useNavigate();
   const loginMutation = useMutation<LoginResponse, unknown, LoginBody>(
@@ -132,7 +132,7 @@ export const useLogin = (param?: string) => {
       .then(res => {
         const { token } = res;
         localStorage.setItem('login_token', token);
-        setOpen({ status: true, msg: '登录成功' });
+        setOpen({ status: true, msg: 'Signed in successfully' });
         navigate('/');
       })
       .catch(() => {
@@ -144,20 +144,20 @@ export const useLogin = (param?: string) => {
   }, []);
   const clearCallback = () => {
     if (/\d/.test(signupCode)) return;
-    setSignupCode('59秒后发送');
+    setSignupCode('Resend in 59s');
     let code: number = 59;
     const timer: number = window.setInterval(() => {
       code -= 1;
       if (currentStatus.current !== 'signup') {
-        setSignupCode('获取验证码');
+        setSignupCode('Get code');
         window.clearInterval(timer);
         return;
       }
       if (code === 0) {
-        setSignupCode('获取验证码');
+        setSignupCode('Get code');
         window.clearInterval(timer);
       } else {
-        setSignupCode(`${code}秒后发送`);
+        setSignupCode(`Resend in ${code}s`);
       }
     }, 1000);
   };
@@ -175,8 +175,8 @@ export const useLogin = (param?: string) => {
         <>
           <Box component="div">
             <StyledTabs value={value} onChange={handleChange}>
-              <Tab label="短信登录" className="w-1/2" />
-              <Tab label="密码登录" className="w-1/2" />
+              <Tab label="SMS" className="w-1/2" />
+              <Tab label="Password" className="w-1/2" />
             </StyledTabs>
           </Box>
           <TabPanel currentValue={value} index={0}>
@@ -194,7 +194,7 @@ export const useLogin = (param?: string) => {
       {componentType === 'weixin' && (
         <div className="flex justify-center">
           {loginWxUrl && (
-            <iframe src={loginWxUrl} title="微信登录" style={{ height: 400 }} />
+            <iframe src={loginWxUrl} title="WeChat sign-in" style={{ height: 400 }} />
           )}
         </div>
       )}

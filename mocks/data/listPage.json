@@ -2,29 +2,29 @@
   "study": [
     {
       "id": "1",
-      "name": "学习编程（语法入门）",
-      "descriptors": "学习函数、for循环、if语句、逻辑运算符基础语法。",
+      "name": "Programming Fundamentals",
+      "descriptors": "Learn functions, for loops, conditionals, and logical operators.",
       "imgUrl": "static/images/cover1.webp",
       "enabled": true
     },
     {
       "id": "2",
-      "name": "学习编程（语法进阶）",
-      "descriptors": "学习while循环、变量、函数参数已经面向对象编程。",
+      "name": "Programming Patterns",
+      "descriptors": "Explore while loops, variables, function parameters, and reusable patterns.",
       "imgUrl": "static/images/cover2.webp",
       "enabled": true
     },
     {
       "id": "3",
-      "name": "学习编程（数据类型）",
-      "descriptors": "学习数据类型：列表、字典、集合、元组，发挥创造力构建自己的3D场景。",
+      "name": "Data and Worlds",
+      "descriptors": "Use lists, dictionaries, sets, and tuples to build your own 3D scenes.",
       "imgUrl": "static/images/cover3.webp",
       "enabled": true
     },
     {
       "id": "4",
-      "name": "人工智能",
-      "descriptors": "学习人脸识别、语音识别、手姿识别、姿势识别等。",
+      "name": "Artificial Intelligence",
+      "descriptors": "Explore face, speech, hand, and pose recognition.",
       "imgUrl": "static/images/cover4.webp",
       "enabled": false
     }

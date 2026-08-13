@@ -4,7 +4,7 @@ export default {
     {
       kind: 'category',
       type: '',
-      name: '角色',
+      name: 'Character',
       icon: 'juese',
       bgColor: '#F06359',
       categorystyle: 'logic_category',
@@ -49,7 +49,7 @@ export default {
     {
       kind: 'category',
       type: '',
-      name: '判断',
+      name: 'Logic',
       icon: 'kongzhi',
       bgColor: '#01ADFF',
       categorystyle: 'logic_category',
@@ -82,7 +82,7 @@ export default {
     {
       kind: 'category',
       type: '',
-      name: '循环',
+      name: 'Loops',
       icon: 'zence',
       bgColor: '#5AB45B',
       categorystyle: 'loop_category',
@@ -141,7 +141,7 @@ export default {
     {
       kind: 'category',
       type: '',
-      name: '变量',
+      name: 'Variables',
       icon: 'bianliang',
       bgColor: '#FFBB55',
       categorystyle: 'variable_category',
@@ -162,7 +162,7 @@ export default {
     {
       kind: 'category',
       type: '',
-      name: '数学',
+      name: 'Math',
       icon: 'yunsuan',
       bgColor: '#F0AA8B',
       categorystyle: 'math_category',
@@ -286,7 +286,7 @@ export default {
     {
       kind: 'category',
       type: '',
-      name: '列表',
+      name: 'Lists',
       icon: 'liebiao',
       bgColor: '#F9CC37',
       categorystyle: 'list_category',
@@ -326,7 +326,7 @@ export default {
     {
       kind: 'category',
       type: '',
-      name: '函数',
+      name: 'Functions',
       categorystyle: 'procedure_category',
       custom: 'PROCEDURE',
       blockxml: null,

@@ -39,7 +39,7 @@ export const WEIXIN = ({
                   }}
                   className="m-1"
                 >
-                  微信登录
+                  WeChat sign-in
                 </span>
               </>
             ) : (
@@ -51,13 +51,13 @@ export const WEIXIN = ({
                 }}
                 className="m-1 text-blue-500 underline"
               >
-                &lt;&lt;返回登录
+                &lt;&lt; Back to sign-in
               </span>
             )}
           </>
         ) : (
           <div>
-            <p className="m-4 text-gray-400">使用手机微信扫一扫快捷登录</p>
+            <p className="m-4 text-gray-400">Scan with WeChat to sign in</p>
             <p
               className="m-4 
                 text-center 
@@ -67,7 +67,7 @@ export const WEIXIN = ({
                 navigate('/');
               }}
             >
-              点此跳过
+              Skip for now
             </p>
             {/* <p
               aria-hidden="true"
@@ -77,7 +77,7 @@ export const WEIXIN = ({
               }}
               className="text-center m-6 text-blue-500 hover:text-blue-400"
             >
-              已有账号，去登录
+              Already have an account? Sign in
             </p> */}
           </div>
         )}
@@ -96,7 +96,7 @@ export const WEIXIN = ({
                 `${componentType === 'forget' ? 'text-blue-500' : ''}`,
               )}
             >
-              找回密码
+              Reset password
             </span>
             ｜
             <span
@@ -110,13 +110,13 @@ export const WEIXIN = ({
                 `${componentType === 'signup' ? 'text-blue-500' : ''}`,
               )}
             >
-              注册账号
+              Create account
             </span>
           </div>
           <Button type="submit" fullWidth variant="contained" className="m-1">
-            {componentType === 'signup' && '注册'}
-            {componentType === 'signin' && '登录'}
-            {componentType === 'forget' && '提交'}
+            {componentType === 'signup' && 'Sign up'}
+            {componentType === 'signin' && 'Sign in'}
+            {componentType === 'forget' && 'Submit'}
           </Button>
         </>
       ) : null}
