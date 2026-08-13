@@ -52,14 +52,6 @@ module.exports = merge(webConfig, baseDevConfig, {
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
-    proxy: {
-      '/api': {
-        target: `http://localhost:3000`,
-        // pathRewrite: { '^/api': '' },
-        changeOrigin: true,
-        secure: false,
-      },
-    },
   },
   plugins: [
     new HtmlWebpackPlugin({
