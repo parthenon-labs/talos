@@ -9,7 +9,7 @@
     "start:electron": "export NODE_ENV='development' && electron-forge start",
     "start:storybook": "start-storybook -p 6006",
     "build:web": "webpack build --config ./config/web/web.prod.js",
-    "build:pages": "cross-env PUBLIC_URL_PREFIX=/cp-fe-demo webpack build --config ./config/web/web.pages.js",
+    "build:pages": "cross-env PUBLIC_URL_PREFIX=/talos webpack build --config ./config/web/web.pages.js",
     "build:storybook": "build-storybook",
     "build:analyze": "webpack build --config ./config/web/web.prod.js --analyze",
     "package": "cross-env NODE_ENV=production electron-forge package",
