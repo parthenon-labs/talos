@@ -18,7 +18,7 @@ const GridButton = () => {
   return (
     <div className="absolute right-10 top-24">
       <IconButton size="small" onClick={handleClick}>
-        <Tooltip title={`${open ? '隐藏' : '显示'}网格`} arrow>
+        <Tooltip title={`${open ? 'Hide' : 'Show'} grid`} arrow>
           {open ? <GridOff /> : <GridOn />}
         </Tooltip>
       </IconButton>

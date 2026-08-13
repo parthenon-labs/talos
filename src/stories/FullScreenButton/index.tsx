@@ -32,7 +32,7 @@ const FullScreenButton = ({
   return (
     <span className={className}>
       <IconButton onClick={() => toggleFullScreen()} color={color}>
-        <Tooltip title={`${isFullScreen ? '退出' : '进入'}全屏`} arrow>
+        <Tooltip title={`${isFullScreen ? 'Exit' : 'Enter'} fullscreen`} arrow>
           {isFullScreen ? (
             <FullscreenExitIcon className="h-6 w-6" />
           ) : (

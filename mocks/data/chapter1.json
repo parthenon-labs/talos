@@ -1,102 +1,102 @@
 [
   {
-    "text": "函数入门",
+    "text": "Functions",
     "_id": "1",
     "icon": "static/images/list-icon/Robot-1-g.svg",
     "children": [
       {
-        "text": "函数执行",
+        "text": "Calling Functions",
         "_id": "1",
         "icon": "static/images/list-icon/Robot-1.svg"
       },
       {
-        "text": "其他内置函数",
+        "text": "Built-in Functions",
         "_id": "2",
         "icon": "static/images/list-icon/robot-2-b.svg"
       },
       {
-        "text": "组合新的行为",
+        "text": "Composing Behaviors",
         "_id": "3",
         "icon": "static/images/list-icon/robot-3-7.svg"
       },
       {
-        "text": "创建新函数",
+        "text": "Creating Functions",
         "_id": "4",
         "icon": "static/images/list-icon/robot-3-b.svg"
       }
     ]
   },
   {
-    "text": "For循环",
+    "text": "For Loops",
     "_id": "2",
     "icon": "static/images/list-icon/robot-3-g-help.svg",
     "children": [
       {
-        "text": "使用for循环",
+        "text": "Using For Loops",
         "_id": "1",
         "icon": "static/images/list-icon/robot-3-g-search.svg"
       },
       {
-        "text": "嵌套循环",
+        "text": "Nested Loops",
         "_id": "2",
         "icon": "static/images/list-icon/robot-3-g.svg"
       },
       {
-        "text": "函数与循环",
+        "text": "Functions and Loops",
         "_id": "3",
         "icon": "static/images/list-icon/robot-3-help.svg"
       }
     ]
   },
   {
-    "text": "条件判断",
+    "text": "Conditionals",
     "_id": "3",
     "icon": "static/images/list-icon/robot-3-police.svg",
     "children": [
       {
-        "text": "使用if语句",
+        "text": "Using If",
         "_id": "1",
         "icon": "static/images/list-icon/robot-3-warning.svg"
       },
       {
-        "text": "使用else语句",
+        "text": "Using Else",
         "_id": "2",
         "icon": "static/images/list-icon/Robot-b-1.svg"
       },
       {
-        "text": "如何使用elif语句",
+        "text": "Using Elif",
         "_id": "3",
         "icon": "static/images/list-icon/Robot-bad-1-b.svg"
       },
       {
-        "text": "循环条件语句",
+        "text": "Conditionals in Loops",
         "_id": "4",
         "icon": "static/images/list-icon/Robot-b.svg"
       }
     ]
   },
   {
-    "text": "逻辑运算符",
+    "text": "Logical Operators",
     "_id": "4",
     "icon": "static/images/list-icon/Robot-bad-g.svg",
     "children": [
       {
-        "text": "使用“非”运算符",
+        "text": "Using Not",
         "_id": "1",
         "icon": "static/images/list-icon/Robot-bad-grey.svg"
       },
       {
-        "text": "非之螺旋",
+        "text": "The Not Spiral",
         "_id": "2",
         "icon": "static/images/list-icon/Robot-bad.svg"
       },
       {
-        "text": "使用“与”运算符",
+        "text": "Using And",
         "_id": "3",
         "icon": "static/images/list-icon/Robot-f.svg"
       },
       {
-        "text": "使用“或”运算符",
+        "text": "Using Or",
         "_id": "4",
         "icon": "static/images/list-icon/Robot-g.svg"
       }

@@ -67,7 +67,7 @@ const Card = ({ id, imgUrl, name, descriptors, enabled }: CardProps) => {
                 opacity={false}
                 className="w-2/5"
               >
-                积木开始
+                Start with blocks
               </AwesomeButton>
 
               <AwesomeButton
@@ -75,11 +75,11 @@ const Card = ({ id, imgUrl, name, descriptors, enabled }: CardProps) => {
                 onClick={() => handleClick(id, 'python')}
                 className="w-2/5"
               >
-                python开始
+                Start with Python
               </AwesomeButton>
             </>
           ) : (
-            <span className="text-gray-400">努力制作中😉 , 敬请期待...</span>
+            <span className="text-gray-400">Coming soon...</span>
           )}
         </div>
       </div>

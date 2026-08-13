@@ -9,7 +9,7 @@ module.exports = {
   mode: 'development',
   plugins: [
     new WebpackBar({
-      name: '小灯coding',
+      name: 'Talos',
       profile: true,
     }),
     new ReactRefreshWebpackPlugin(),

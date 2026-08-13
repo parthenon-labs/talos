@@ -25,7 +25,7 @@ class Command {
     y: number = 0,
   ) {
     if (!Object.keys(blockMap).includes(type)) {
-      return toast.error('🧱 类型不存在', errorToastOptions);
+      return toast.error('Unknown tile type', errorToastOptions);
     }
     CommandQueue.push({
       type,

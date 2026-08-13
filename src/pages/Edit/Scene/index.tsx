@@ -140,23 +140,23 @@ const Scene = ({ chapterContent }: SceneProps) => {
           />
           <div
             className={cn(
-              'absolute bottom-0 flex h-16 w-full items-center justify-center',
+              'pointer-events-none absolute bottom-6 z-20 flex w-full items-center justify-center',
             )}
           >
             <RunButton
+              className="pointer-events-auto"
               loading={runButtonLoading}
               loadingPosition="end"
               variant="contained"
               endIcon={<PlayArrowIcon />}
               onClick={clickRun}
             >
-              {pythonRuntimeReady ? '运行' : '加载中'}
-              {running && '中'}
+              {!pythonRuntimeReady ? 'Loading' : running ? 'Running' : 'Run'}
             </RunButton>
           </div>
           <div className="absolute left-10 top-10 flex justify-center">
             <img
-              alt="金币图片"
+              alt="Coin"
               src={coinsImage}
               className="mr-4 inline-block h-[42px] w-[42px]"
             />

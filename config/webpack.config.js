@@ -60,7 +60,7 @@ module.exports = {
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
     new WebpackBuildNotifierPlugin({
-      title: '小灯coding Build',
+      title: 'Talos Build',
       suppressSuccess: true,
       logo: resolve(__dirname, '../public/icons/logo.png'),
     }),

@@ -16,8 +16,8 @@ export function getInfoFromSyntaxError(err: Error) {
       }
       if (str.toLowerCase().includes('error') && !errorTypeMessage) {
         const chnMap = {
-          SyntaxError: '语法错误',
-          IndentationError: '缩进错误',
+          SyntaxError: 'syntax error',
+          IndentationError: 'indentation error',
         };
         const type = str.split(':')[0] as keyof typeof chnMap;
         errorTypeMessage = chnMap[type] || str;
@@ -54,55 +54,55 @@ export function transformPyodideRunError(err: Error) {
   const errorMessage = errorList[errorList.length - 1];
   try {
     const { row } = getInfoFromSyntaxError(err);
-    const rowMsg = row > -1 ? `第 ${row + 1} 行, ` : '';
+    const rowMsg = row > -1 ? `line ${row + 1}, ` : '';
 
     if (errorMessage.includes('EOFError')) {
-      return `EOFError: 输入被中断`;
+      return `EOFError: input was interrupted`;
     }
 
     if (errorMessage.includes('ZeroDivisionError')) {
-      return `ZeroDivisionError: ${rowMsg}0 不能作为被除数`;
+      return `ZeroDivisionError: ${rowMsg}division by zero`;
     }
 
     if (errorMessage.includes('ValueError')) {
       const matched = errorMessage.match(/\s(\w*)\(\)/);
       const fnName = matched ? `'${matched[1]}'` : '';
-      return `ValueError: ${rowMsg}函数 ${fnName} 参数类型错误`;
+      return `ValueError: ${rowMsg}invalid argument type for ${fnName}`;
     }
 
     if (errorMessage.includes('TypeError')) {
-      return `TypeError: ${rowMsg}类型错误`;
+      return `TypeError: ${rowMsg}invalid type`;
     }
 
     if (errorMessage.includes('StopIteration')) {
-      return `StopIteration: next 超出迭代项`;
+      return `StopIteration: next item is unavailable`;
     }
 
     if (errorMessage.includes('ImportError')) {
       const matched = errorMessage.match(/cannot import name ['"](\w*)['"]/);
       const importName = matched ? `'${matched[1]}'` : '';
-      return `ImportError: ${importName} 引入错误`;
+      return `ImportError: could not import ${importName}`;
     }
 
     if (errorMessage.includes('NameError')) {
       const matched = errorMessage.match(/name ['"](\w*)['"] is not defined/);
       const tip = matched ? matched[1] : '';
-      return `NameError: 变量 '${tip}' 未定义`;
+      return `NameError: variable '${tip}' is not defined`;
     }
 
     if (errorMessage.includes('IndexError')) {
-      return `IndexError: ${rowMsg}下标超出范围`;
+      return `IndexError: ${rowMsg}index out of range`;
     }
 
     if (errorMessage.includes('ModuleNotFoundError')) {
       const matched = errorMessage.match(/No module named (['"]\w*['"])/);
       const tip = matched ? matched[1] : '';
-      return `ModuleNotFoundError: 模块 ${tip} 未找到`;
+      return `ModuleNotFoundError: module ${tip} was not found`;
     }
 
     if (errorMessage.includes('KeyError')) {
       const tip = errorMessage.split(':')[1].trim();
-      return `KeyError: ${rowMsg}属性 ${tip} 未找到`;
+      return `KeyError: ${rowMsg}property ${tip} was not found`;
     }
   } catch {
     // todo something ...

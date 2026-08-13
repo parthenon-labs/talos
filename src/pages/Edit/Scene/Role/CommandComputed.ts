@@ -56,7 +56,7 @@ class CommandComputed {
       this.currentPosition = currentPosition;
       if (!this.verifiedPosition(currentPosition)) {
         this.block = true;
-        toast.error('请将角色放置道路范围内', errorToastOptions);
+        toast.error('Place the character on a walkable tile', errorToastOptions);
       }
     }
     !this.block &&

@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  name: '小灯Coding',
+  name: 'Talos',
   short_name: 'Coding',
   start_url: '/',
   background_color: '#ffffff',
