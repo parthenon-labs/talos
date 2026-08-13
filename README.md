@@ -1,45 +1,35 @@
 # Talos
 
-> 3D 编程教学前端 · Babylon.js + React
+> 3D coding-education frontend · Babylon.js + React
 
 [![Deploy GitHub Pages demo](https://github.com/parthenon-labs/talos/actions/workflows/pages.yml/badge.svg)](https://github.com/parthenon-labs/talos/actions/workflows/pages.yml)
 
-**在线演示：** https://parthenon-labs.github.io/talos/
+**Live demo:** https://parthenon-labs.github.io/talos/
 
 ---
 
-## 目录
+## Table of Contents
 
-- [介绍](#介绍)
+- [Overview](#overview)
   - [TODO](#todo)
-  - [地址](#地址)
-  - [技术栈/库](#技术栈库)
-- [开始](#开始)
-  - [开发环境](#开发环境)
-    - [项目启动](#项目启动)
-  - [生产环境](#生产环境)
-  - [目录结构](#目录结构)
-  - [commit 规范](#commit-规范)
+  - [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Development](#development)
+    - [Start the project](#start-the-project)
+  - [Production](#production)
+  - [Directory Structure](#directory-structure)
+  - [Commit Convention](#commit-convention)
 
-## 介绍
-
-项目原型：https://modao.cc/app/kwsmos51ne8hqn#screen=skv0fp525e6aw6k
+## Overview
 
 ### TODO
 
 - [ ] SSG:
-  1. 使用 webpackHTMLPlugin + renderToString
-  2. 支持动态路由以及 query
-  3. 数据更新时，调用 CI/CD 工具 API 重新构建
+  1. Use webpackHTMLPlugin + renderToString
+  2. Support dynamic routes and query params
+  3. Call the CI/CD tool's API to trigger a rebuild when data changes
 
-### 地址
-
-| 环境 | 地址 |
-| --- | --- |
-| 前端测试环境 | https://cp.test.yidengfe.com/ |
-| 接口测试环境 | http://cp.api-test.yidengfe.com/ |
-
-### 技术栈/库
+### Tech Stack
 
 - React 18
 - React Router V6
@@ -52,79 +42,79 @@
 - Tailwind CSS
 - Babylon.js
 
-## 开始
+## Getting Started
 
-### 开发环境
+### Development
 
-推荐使用 vs code 开发，并且安装以下插件（其他 IDE 安装对应插件）
+VS Code is recommended, with the following extensions installed (or the equivalent for another IDE):
 
 1. `PostCSS Language Support`
 2. `Tailwind CSS IntelliSense`
 3. `Eslint`
 4. `Prettier - Code formatter`
 
-#### 项目启动
+#### Start the project
 
 ```sh
 yarn install
 ```
 
-| 命令 | 说明 |
+| Command | Description |
 | --- | --- |
-| `yarn start:web` | 启动 web |
-| `yarn start:electron` | 启动 electron |
-| `yarn start:storybook` | 启动 storybook |
+| `yarn start:web` | Start the web app |
+| `yarn start:electron` | Start the Electron app |
+| `yarn start:storybook` | Start Storybook |
 
-### 生产环境
+### Production
 
-| 命令 | 说明 |
+| Command | Description |
 | --- | --- |
-| `yarn build:analyze` | 打包依赖分析 |
-| `yarn build:web` | 编译 web 端 |
-| `yarn build:web --progress profile` | 打包速度分析 |
-| `yarn build:storybook` | 编译 storybook |
-| `yarn make` | 本地编译当前平台 electron（以下子命令用于 github action 集群编译） |
-| `yarn make:mac:x64` | 编译英特尔 Mac |
-| `yarn make:mac:arm64` | 编译 M1 Mac |
-| `yarn make:win:x64` | 编译 64 位 windows |
-| `yarn make:win:ia32` | 编译 32 位 windows |
+| `yarn build:analyze` | Bundle dependency analysis |
+| `yarn build:web` | Build for web |
+| `yarn build:web --progress profile` | Build speed profiling |
+| `yarn build:storybook` | Build Storybook |
+| `yarn make` | Build Electron for the current platform (subcommands below are for GitHub Actions cluster builds) |
+| `yarn make:mac:x64` | Build for Intel Mac |
+| `yarn make:mac:arm64` | Build for M1 Mac |
+| `yarn make:win:x64` | Build for 64-bit Windows |
+| `yarn make:win:ia32` | Build for 32-bit Windows |
 
-### 目录结构
+### Directory Structure
 
 ```
-|- .storybook —— storybook配置
-|- config —— 项目webpack配置
-|- dist —— 生产环境打包输出目录
+|- .storybook — Storybook config
+|- config — project webpack config
+|- dist — production build output
 |- src
-  |- apis —— API请求
-    |- model —— API数据interface
-    |- services —— API请求定义
-    |- index.ts —— 请求基础配置
-    |- queryKeys.ts —— 数据缓存Key（枚举）
-  |- assets —— 静态资源（图片、字体...）
-  |- hooks —— 自定义hook
-    |- state.ts —— redux 相关Hooks
-  |- layout —— 页面公共布局
-  |- pages —— 页面
-  |- routes —— 路由配置
-  |- stories —— 公共组件
-  |- utils —— 工具方法
-  |- index.tsx —— 项目入口文件
-|- tailwind.config.js —— tailwind-css配置
+  |- apis — API requests
+    |- model — API data interfaces
+    |- services — API request definitions
+    |- index.ts — base request config
+    |- queryKeys.ts — data cache keys (enum)
+  |- assets — static assets (images, fonts...)
+  |- hooks — custom hooks
+    |- state.ts — redux-related hooks
+  |- layout — shared page layout
+  |- pages — pages
+  |- routes — routing config
+  |- stories — shared components
+  |- utils — utility functions
+  |- index.tsx — app entry point
+|- tailwind.config.js — Tailwind CSS config
 ```
 
-### commit 规范
+### Commit Convention
 
-| 类型 | 说明 |
+| Type | Description |
 | --- | --- |
-| `build` | 构建工具相关 |
+| `build` | Build tooling |
 | `ci` | CI |
-| `chore` | 修改工具相关（包括但不限于文档、代码生成等） |
-| `docs` | 修改文档 |
-| `feat` | 新功能 |
-| `fix` | 修复问题 |
-| `perf` | 提升性能 |
-| `refactor` | 重构代码，理论上不影响现有功能 |
-| `revert` | 回滚 |
-| `style` | 修改代码格式，不影响代码逻辑 |
-| `test` | 测试相关 |
+| `chore` | Tooling changes (including but not limited to docs, code generation, etc.) |
+| `docs` | Documentation changes |
+| `feat` | New feature |
+| `fix` | Bug fix |
+| `perf` | Performance improvement |
+| `refactor` | Code refactor, no functional change intended |
+| `revert` | Revert a commit |
+| `style` | Code formatting, no logic change |
+| `test` | Test-related |
