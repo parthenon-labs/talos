@@ -7,13 +7,10 @@ import appendScript from '@/utils/appendScript';
 import {
   localStaticBaseUrl,
   errorToastOptions,
-  isElectron,
 } from '@/utils/constant';
 import { getInfoFromSyntaxError, transformPyodideRunError } from './utils';
 
-const indexURL = isElectron
-  ? `${localStaticBaseUrl}pyodide/`
-  : 'https://pyodide.oss-cn-beijing.aliyuncs.com/pyodide/';
+const indexURL = `${localStaticBaseUrl}pyodide/`;
 
 type ReplaceKeyword = 'isCoin' | 'isBlocked' | 'isRightBlocked';
 

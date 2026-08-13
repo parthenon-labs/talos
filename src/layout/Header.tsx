@@ -7,7 +7,6 @@ import FullScreenButton from '@/stories/FullScreenButton';
 import { toggleChapter } from '@/pages/Edit/store';
 import { useAppDispatch } from '@/hooks/state';
 import useChapterTitle from './useChapterTitle';
-import logoImage from '@/assets/logo.webp';
 
 const btnStyles = { color: 'rgba(255,255,255,1)' };
 const MenuButton = styled(IconButton)(btnStyles);
@@ -45,7 +44,9 @@ const Header = () => {
                 'border-r-2 border-solid border-current': !isCenter,
               })}
             >
-              <img src={logoImage} alt="Talos" className="w-[140px]" />
+              <span className="block w-[140px] text-2xl font-bold tracking-wide">
+                Talos
+              </span>
             </div>
             {!isCenter && (
               <>
