@@ -22,6 +22,6 @@
       "@mocks/*": ["mocks/*"]
     },
   },
-  "include": ["src", "libs", "tests", "mocks", "electron"],
+  "include": ["src", "libs", "tests", "mocks"],
   "exclude": ["node_modules"]
 }

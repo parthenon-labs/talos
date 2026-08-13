@@ -1,7 +1,6 @@
-import { useMemo, startTransition, useDeferredValue } from 'react';
+import { useEffect, useMemo, startTransition, useDeferredValue } from 'react';
 import cn from 'classnames';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { styled, IconButton, Tooltip } from '@mui/material';
 import { Menu as MenuIcon, Home as HomeIcon } from '@mui/icons-material';
 import FullScreenButton from '@/stories/FullScreenButton';
@@ -21,11 +20,12 @@ const Header = () => {
   const chapterTitle = useChapterTitle();
   const deferChapterTitle = useDeferredValue(chapterTitle);
 
+  useEffect(() => {
+    document.title = `Talos ${deferChapterTitle}`;
+  }, [deferChapterTitle]);
+
   return (
     <>
-      <Helmet>
-        <title>{`小灯coding ${deferChapterTitle}`}</title>
-      </Helmet>
       <header
         className={cn(
           'sticky top-0 flex h-[52px] items-center justify-center',
