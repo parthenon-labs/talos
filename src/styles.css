@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  @apply h-full;
+}
+
+@layer utilities {
+  .writing-mode-lr {
+    writing-mode: vertical-lr;
+  }
+  .writing-mode-rl {
+    writing-mode: vertical-rl;
+  }
+}
+
+/** 滚动条与抽屉动画不统一，而抽屉与滚动条不是同一个组件，先隐藏 */
+.blocklyFlyoutScrollbar {
+  display: none;
+}

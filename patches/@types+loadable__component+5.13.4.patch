@@ -1,0 +1,13 @@
+diff --git a/node_modules/@types/loadable__component/index.d.ts b/node_modules/@types/loadable__component/index.d.ts
+index b4e10c6..9655968 100755
+--- a/node_modules/@types/loadable__component/index.d.ts
++++ b/node_modules/@types/loadable__component/index.d.ts
+@@ -51,7 +51,7 @@ export interface ExtraComponentProps {
+     fallback?: JSX.Element | undefined;
+ }
+ 
+-export type LoadableComponent<Props> = React.ComponentType<Props & ExtraComponentProps> &
++export type LoadableComponent<Props> = React.FunctionComponent<Props & ExtraComponentProps> &
+     LoadableComponentMethods<Props>;
+ 
+ export interface ExtraClassComponentProps<Component extends React.ComponentClass> extends ExtraComponentProps {

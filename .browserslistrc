@@ -1,0 +1,7 @@
+[development]
+last 1 version
+not ie 11
+
+
+[production]
+chrome >= 99

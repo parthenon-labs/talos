@@ -1,0 +1,95 @@
+/* // webpack限制下，css文件不能引入，积木不能自定义样式，css文件暂时放着以防后面需要使用 */
+.customIcon {
+  color: white;
+}
+
+.blocklyTreeRowContentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blocklyTreeRow {
+  height: initial;
+}
+
+.blocklyTreeLabel {
+  color: rgb(41, 126, 255);
+  font-size: 14px;
+}
+
+/*.blocklyToolboxContents {
+  padding: 0.5em;
+}*/
+
+.blocklyTreeRow {
+  height: 64px;
+  padding: 3px;
+  /* margin-bottom: 0.5em; */
+  margin-bottom: 0;
+  border-radius: 4px;
+}
+
+.content--101Ir :not(input, textarea),
+:not(input, textarea) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.blocklyFlyout:not([disable-animation='true']) {
+  transition: transform 0.3s ease, opacity 0.3s ease-out;
+}
+
+.blocklyTreeRow {
+  /* padding-right: 14px; */
+  border-radius: 4px;
+  height: 100%;
+}
+
+.blocklyToolboxDiv {
+  border: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff !important;
+  padding: 5px 0 0 1px;
+  box-shadow: rgba(41, 126, 255, 0.08) 2px 0px 4px 0px;
+  border-right: 1px solid rgba(41, 126, 255, 0.08);
+  transform: translateZ(0);
+}
+
+[role='treeitem'] {
+  min-width: 64px;
+  /* height: 32px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 6px;
+  position: relative;
+  line-height: 32px;
+}
+
+.blocklyTreeRow {
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.boolean-block {
+  padding-right: 20px;
+}
+
+.blocklyFlyoutBackground {
+  fill: #fff9f5;
+}
+
+.blocklySelected {
+  filter: url(#blocklyBlockSelected);
+}

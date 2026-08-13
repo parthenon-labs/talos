@@ -1,0 +1,73 @@
+[
+  {
+    "text": "While循环",
+    "_id": "1",
+    "icon": "static/images/list-icon/Robot-1-g.svg",
+    "children": [
+      {
+        "text": "使用while循环",
+        "_id": "1",
+        "icon": "static/images/list-icon/Robot-1.svg"
+      },
+      {
+        "text": "while循环与条件语句",
+        "_id": "2",
+        "icon": "static/images/list-icon/robot-2-b.svg"
+      },
+      {
+        "text": "嵌套循环",
+        "_id": "3",
+        "icon": "static/images/list-icon/robot-3-7.svg"
+      }
+    ]
+  },
+  {
+    "text": "函数进阶",
+    "_id": "2",
+    "icon": "static/images/list-icon/robot-3-g-help.svg",
+    "children": [
+      {
+        "text": "函数的参数",
+        "_id": "1",
+        "icon": "static/images/list-icon/robot-3-g-search.svg"
+      },
+      {
+        "text": "函数的默认参数",
+        "_id": "2",
+        "icon": "static/images/list-icon/robot-3-g.svg"
+      },
+      {
+        "text": "将角色放置特定位置",
+        "_id": "3",
+        "icon": "static/images/list-icon/robot-3-help.svg"
+      }
+    ]
+  },
+  {
+    "text": "变量",
+    "_id": "3",
+    "icon": "static/images/list-icon/robot-3-police.svg",
+    "children": [
+      {
+        "text": "追踪记录",
+        "_id": "1",
+        "icon": "static/images/list-icon/robot-3-warning.svg"
+      },
+      {
+        "text": "使值增大",
+        "_id": "2",
+        "icon": "static/images/list-icon/Robot-b-1.svg"
+      },
+      {
+        "text": "使值递增",
+        "_id": "3",
+        "icon": "static/images/list-icon/Robot-bad-1-b.svg"
+      },
+      {
+        "text": "`+=`运算符",
+        "_id": "4",
+        "icon": "static/images/list-icon/Robot-b.svg"
+      }
+    ]
+  }
+]

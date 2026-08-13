@@ -1,0 +1,92 @@
+[
+  {
+    "chapterId": "1",
+    "childId": "1",
+    "description": "#### 函数执行\n\n**目标**：使用函数让 Byte 动起来，去收集金币\n\n你的角色 Byte 喜欢收集金币，但是他一个人做不到，第一关里你需要通过拖拽积木或编写 Python 代码，让 Byte 在关卡世界中动起来，去收集金币。\n\n1. 找到关卡世界中的金币，并收集起来\n2. 通过`moveForward`、`collectCoin`积木或者Python函数去前进收集金币\n3. 点击场景下方“运行”按钮",
+    "sceneUrl": "static/model/1_1.glb"
+  },
+  {
+    "chapterId": "1",
+    "childId": "2",
+    "description": "#### 其他内置函数\n\n**目标**：把移动和转弯函数结合起来，去收集金币\n\n这一关和上一关类似，但这次Byte需要左转才能到达宝石处，我们需要用到新的函数`turnLeft`让角色可以左转去收集金币。\n\n1. 构思能让Byte收集到金币的方式\n2. 使用`turnLeft`让Byte可以左转\n3. 运行代码",
+    "sceneUrl": "static/model/1_2.glb"
+  },
+  {
+    "chapterId": "1",
+    "childId": "3",
+    "description": "#### 组合新的行为\n\n**目标**：使用命令组合实现Byte的右转\n\n你是否注意到，目前还没有`turnRight`函数，如果角色需要通过右转才能到达金币处，该怎么办呢？\n\n有时候为了解决类似的编程问题，我们可以组合现有函数来创建新的行为，这个过程可以称为**组合**。\n\n1. 想一想这么菜能通过之前的命令实现右转呢\n2. 使用组合的方式让角色在需要时右转\n3. 收集金币并运行代码",
+    "sceneUrl": "static/model/1_3.glb"
+  },
+  {
+    "chapterId": "1",
+    "childId": "4",
+    "description": "#### 创建新函数\n\n**目标**：定义并使用`turnRight`函数来实现右转\n\n在上一关中，你只右转了一次，所以使用三次左转不是大问题，但是如果你需要右转不止一次呢？更高效的方式是三次左转的动作定义成一个新的`turnRight`函数，这样多次运行起来就很方便。\n\n1. 定义`turnRight`函数\n2. 输入三个`turnLeft`函数\n3. 使用`turnRight`函数实现角色的右转\n\n",
+    "sceneUrl": "static/model/1_4.glb"
+  },
+  {
+    "chapterId": "2",
+    "childId": "1",
+    "description": "**目标**：使用`for`循环重复的代码。\n\n之前为了分解编程任务，你编写了用于重复模式的函数，现在你可以使用循环，多次调用一个函数。在一个循环中，写一次代码并输入代码重复的次数。\n\n在这一关中我们使用`for`循环去简化之前重复了多次的`moveForward`函数，从而实现前进多步的功能。\n\n1. 使用for循环\n1. 确认循环重复次数\n1. 编写要重复的语句",
+    "sceneUrl": "static/model/2_1.glb"
+  },
+  {
+    "chapterId": "2",
+    "childId": "2",
+    "description": "**目标**：使用嵌套`for`循环重复命令。\n\n在上一关中你使用for循环将一个命令重复多次，这一关将会使用2层的嵌套循环，最外层循环正方形的每一条边，内侧的循环，循环执行`moveForward`\n\n1. 使用嵌套循环\n2. 循环路的每一侧\n3. 使用循环前进指定的次数",
+    "sceneUrl": "static/model/2_2.glb"
+  },
+  {
+    "chapterId": "2",
+    "childId": "3",
+    "description": "**目标**：将多个步骤分解成函数和循环\n\n这一关中我们可以发现，两条有金币的路上，他们的金币的位置是相同的，我们可以把相同动作抽离成函数，来减少重复的代码\n\n1. 将相同的动作抽离成函数\n2. 使用for循环减少重复的命令",
+    "sceneUrl": "static/model/2_3.glb"
+  },
+  {
+    "chapterId": "3",
+    "childId": "1",
+    "description": "**目标**：使用`if`语句哦按段当前位置是否有金币\n\n在这一关中，我们可以使用更简化的方式在有金币的时候自动收集金币。\n\n使用`isCoin`判断角色当前位置是否有金币，返回`bool`类型，有金币则`True`否则`False`。并且使用`if`检查，当条件语句中的条件为`True`的时候才会执行`if`中的语句否则不执行。\n\n1. 使用`if`判断角色当前位置是否有金币\n2. 使用`isCoin`变量",
+    "sceneUrl": "static/model/3_1.glb"
+  },
+  {
+    "chapterId": "3",
+    "childId": "2",
+    "description": "**目标**：使用`else`语句，当条件为`False`时执行需要的代码\n\n上一关使用`if`条件语句当条件为`True`的时候才会执行需要的代码。这一关我们使用`else`当条件为`False`时执行需要的代码\n\n1. 使用`else`语句\n2. 当角色可前进时执行`moveForward`,否则右转",
+    "sceneUrl": "static/model/3_2.glb"
+  },
+  {
+    "chapterId": "3",
+    "childId": "3",
+    "description": "**目标**：使用`elif`语句\n\n上面的关卡中为了确认角色当前位置是否有金币，使用`if`来检查其中一种可能性，这一关我们使用`elif`来检查另一种可能性。\n\n1. 使用`if`检查道路是否被阻止\n2. 使用`elif`检查角色所在位置是否有金币\n3. 以上条件都没满足时执行`moveForward`\n\n",
+    "sceneUrl": "static/model/3_3.glb"
+  },
+  {
+    "chapterId": "3",
+    "childId": "4",
+    "description": "**目标**：使用`for`循环与`if` `elif` `else`结合收集金币",
+    "sceneUrl": "static/model/3_4.glb"
+  },
+  {
+    "chapterId": "4",
+    "childId": "1",
+    "description": "**目标**：使用`not`运算符\n\n“非”运算符`not`反转布尔值，表示“如果不满足这个条件则不这么做”。\n\n使用`not`运算符，当左侧道路不阻塞的时候前进并拾取左侧道路内的金币，否则向前走拾取金币。\n\n1. 使用`if` `else`条件语句\n2. 使用`not`运算符",
+    "sceneUrl": "static/model/4_1.glb"
+  },
+  {
+    "chapterId": "4",
+    "childId": "2",
+    "description": "**目标**：练习`not`运算符\n\n使用`not`运算符判断前方道路不阻塞时，执行前进，否则右转。",
+    "sceneUrl": "static/model/4_2.glb"
+  },
+  {
+    "chapterId": "4",
+    "childId": "3",
+    "description": "**目标**：使用`and`运算符\n\n“与”运算符`and`结合两个条件，且进二者均为`真`时运行代码。\n\n使用`and`运算符，判断`isCoin`与`isRightBlocked`（右侧道路是否阻塞）条件都满足时执行收集金币，否则收集右侧道路中的金币",
+    "sceneUrl": "static/model/4_3.glb"
+  },
+  {
+    "chapterId": "4",
+    "childId": "4",
+    "description": "**目标**：使用`or`运算符\n\n“或”运算符`or`结合两个条件，且至少有一个为`真`是运行代码。\n\n使用`or`运算符，判断`isBlocked`或`isRightBlocked`满足条件时执行左转，否则向前移到。",
+    "sceneUrl": "static/model/4_4.glb"
+  }
+]
