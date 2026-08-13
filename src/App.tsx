@@ -2,7 +2,6 @@ import { HashRouter } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from '@mui/material';
 import Compose from '@/stories/ComposeProvider';
 import AppRoutes from '@/routes';
@@ -26,7 +25,6 @@ const App = () => (
     components={[
       [QueryClientProvider, { client: queryClient }],
       [ThemeProvider, { theme: themeOptions }],
-      [HelmetProvider],
       [ReduxProvider, { store }],
       // Always HashRouter: this build has no live backend or server-side
       // routing (static portfolio demo hosted on GitHub Pages).
