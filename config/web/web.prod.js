@@ -26,6 +26,14 @@ module.exports = merge(webConfig, webProdConfig, {
     new GenerateSW({
       maximumFileSizeToCacheInBytes: 1024 * 1024 * 5,
       navigateFallback: 'index.html',
+      // Without these, a new deploy's service worker installs but sits
+      // "waiting" — every tab left open from a previous visit keeps
+      // serving the old cached bundle until it's fully closed and
+      // reopened. skipWaiting + clientsClaim let a new SW take over
+      // existing tabs immediately (paired with the reload-on-update
+      // listener in web.ts so that tab actually picks up the new assets).
+      skipWaiting: true,
+      clientsClaim: true,
       // Pyodide is served from the app's own static assets (see
       // PythonRuntime/index.ts), so it's already covered by GenerateSW's
       // default precaching — no separate runtime-caching rule needed.
