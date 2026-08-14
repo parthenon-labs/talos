@@ -58,24 +58,22 @@ const Card = ({ id, imgUrl, name, descriptors, enabled }: CardProps) => {
           <div className="text-sm text-gray-400">{descriptors}</div>
         </div>
 
-        <div className="flex justify-around p-2 pb-8">
+        <div className="flex justify-center gap-3 p-2 pb-8">
           {enabled ? (
             <>
               <AwesomeButton
                 onMouseEnter={() => preloadEditor('blockly')}
                 onClick={() => handleClick(id, 'blockly')}
                 opacity={false}
-                className="w-2/5"
               >
-                Start with blocks
+                Blocks
               </AwesomeButton>
 
               <AwesomeButton
                 onMouseEnter={() => preloadEditor('python')}
                 onClick={() => handleClick(id, 'python')}
-                className="w-2/5"
               >
-                Start with Python
+                Python
               </AwesomeButton>
             </>
           ) : (

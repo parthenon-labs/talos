@@ -98,8 +98,17 @@ const Scene = ({ chapterContent }: SceneProps) => {
   }, []);
 
   useEffect(() => {
-    pythonRuntimeReady && pythonRuntime.current?.register();
-  }, [pythonRuntimeReady]);
+    // pythonRuntime.current is only assigned once engine setup finishes
+    // (see the useLayoutEffect above), so gating this on pythonRuntimeReady
+    // alone is a race: if Pyodide finishes loading before the 3D engine
+    // does, this effect fires while the ref is still null, register() is
+    // silently skipped, and — since pythonRuntimeReady only flips
+    // false→true once — never retried. The character commands then never
+    // get registered for the rest of the session, and every Run fails
+    // with "ModuleNotFoundError: module 'role' was not found". Wait on
+    // both flags so whichever settles last is the one that fires it.
+    engineReady && pythonRuntimeReady && pythonRuntime.current?.register();
+  }, [engineReady, pythonRuntimeReady]);
 
   useEffect(() => {
     if (!chapterContent.isSuccess) return;

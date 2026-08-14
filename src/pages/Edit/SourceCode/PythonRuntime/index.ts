@@ -77,6 +77,23 @@ class PythonRuntime {
     );
     // 重置场景
     GameScene.getInstance().restoreScene();
+
+    // RoleController's position/direction start out as class static field
+    // initializers reading GameScene.getInstance().role — evaluated once,
+    // the first time Role/Command is imported (see register() above),
+    // which can be before this level's 3D model has finished loading. If
+    // that first read lands on `undefined`, every command computed from
+    // it stays broken for the rest of the session (moveForward() ends up
+    // destructuring an undefined position and throws). Restoring here,
+    // right before every run, re-syncs from the scene's current role —
+    // which is guaranteed loaded by the time a human can see it on screen
+    // and press Run — instead of relying on that first, possibly-early
+    // snapshot.
+    const { default: Control } = await import(
+      '@/pages/Edit/Scene/Role/Command'
+    );
+    Control.restore();
+
     toast.dismiss();
     this.#pyodide
       .runPythonAsync(code)

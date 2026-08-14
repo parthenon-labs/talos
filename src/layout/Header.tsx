@@ -28,7 +28,8 @@ const Header = () => {
       <header
         className={cn(
           'sticky top-0 flex h-[52px] items-center justify-center',
-          'z-10 bg-primary p-4 text-white shadow-primary',
+          'z-10 bg-gradient-to-b from-[#3D8BFF] to-[#256FEA] p-4',
+          'text-white shadow-primary',
         )}
       >
         <div
@@ -41,10 +42,10 @@ const Header = () => {
           <div className="flex h-full select-none items-center">
             <div
               className={cn('mr-4 h-full pr-4', {
-                'border-r-2 border-solid border-current': !isCenter,
+                'border-r border-solid border-white/25': !isCenter,
               })}
             >
-              <span className="block w-[140px] text-2xl font-bold tracking-wide">
+              <span className="block w-[140px] text-2xl font-extrabold tracking-tight">
                 Talos
               </span>
             </div>

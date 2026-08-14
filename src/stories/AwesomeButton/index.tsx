@@ -16,7 +16,7 @@ export interface AwesomeButtonProps
   onClick?: () => void;
 
   /**
-   * 按钮背景是否透明
+   * true (default): solid primary button. false: outlined secondary button.
    */
   opacity?: boolean;
 }
@@ -32,20 +32,11 @@ const AwesomeButton = ({
     type="button"
     onClick={onClick}
     className={cn(
-      'relative py-1.5 px-2 hover:after:bg-[rgba(0,0,0,0.7)]',
-      'z-0 text-sm text-white transition-all duration-300 ease-in-out',
-
-      opacity ? 'after:bg-[rgba(0,0,0,0.4)]' : 'after:bg-black',
-      'after:absolute after:left-0 after:top-0 after:z-[-1] after:h-full after:w-full',
-      'after:transition-all after:duration-150 after:ease-in-out',
-
-      "before:absolute before:top-[-2px] before:left-[-2px] before:content-['']",
-      'before:h-[calc(100%+4px)] before:w-[calc(100%+4px)]',
-      'before:z-[-1] before:bg-awesomeButton before:bg-[length:400%] before:blur-sm',
-      'before:animate-awesome-button',
-      'hover:before:h-[calc(100%+10px)] hover:before:w-[calc(100%+10px)]',
-      'hover:before:top-[-5px] hover:before:left-[-5px]',
-      'before:transition-all before:duration-300 before:ease-in-out',
+      'min-w-[110px] whitespace-nowrap rounded-full px-6 py-2.5 text-sm font-semibold',
+      'transition-all duration-200 ease-in-out',
+      opacity
+        ? 'bg-primary text-white shadow-primary hover:bg-[#1E6FE8]'
+        : 'border border-primary bg-white text-primary hover:bg-light',
       className,
     )}
     {...props}

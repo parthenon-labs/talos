@@ -104,6 +104,7 @@ const PythonEditor = () => {
       onChange={codeChange}
       // onCursorChange={cursorChange}
       fontSize={16}
+      wrapEnabled
       annotations={annotations}
       markers={markers}
       onLoad={setEditor}

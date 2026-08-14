@@ -7,6 +7,22 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        // Keep in sync with `fontFamily` in src/theme/index.ts — that's
+        // what MUI components read; this is what Tailwind's own utilities
+        // (and the html/body default) read. Without matching them, MUI
+        // buttons render in a visibly different typeface than everything
+        // styled with Tailwind next to them.
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          'sans-serif',
+        ],
+      },
       colors: {
         primary: '#297EFF',
       },
@@ -19,24 +35,8 @@ module.exports = {
         lightHover: '#bdd1f8',
         primary: '#297EFF',
       },
-      backgroundImage: {
-        awesomeButton:
-          'linear-gradient(45deg, rgb(255, 72, 0), rgb(255, 115, 0), rgb(255, 251, 0), rgb(0, 255, 149), rgb(0, 255, 213), rgb(0, 43, 255), rgb(122, 0, 255), rgb(255, 0, 200), rgb(255, 72, 0))',
-      },
       animation: {
-        'awesome-button':
-          'awesomeBtnBg 3s linear 0s infinite alternate none running',
         'spin-slow': 'spin 1.5s linear infinite',
-      },
-      keyframes: {
-        awesomeBtnBg: {
-          '0%': {
-            'background-position': '0%',
-          },
-          '100%': {
-            'background-position': '100%',
-          },
-        },
       },
       width: {
         content: '1136px',
@@ -45,7 +45,7 @@ module.exports = {
         content: '1136px',
       },
       boxShadow: {
-        primary: 'rgb(41 126 255 / 50%) 0px 2px 4px 0px',
+        primary: '0 8px 24px 0 rgb(41 126 255 / 25%)',
       },
       typography: {
         DEFAULT: {
