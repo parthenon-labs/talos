@@ -57,6 +57,18 @@ module.exports = merge(webConfig, webProdConfig, {
             ignore: ['**/.DS_*'],
           },
         },
+        {
+          // PythonRuntime loads pyodide from `${localStaticBaseUrl}pyodide/`
+          // (see PythonRuntime/index.ts) — without this, the prod bundle
+          // never gets a pyodide/ directory and that fetch 404s, leaving
+          // the Run button stuck on "Loading" forever.
+          from: 'public/pyodide',
+          to: 'pyodide',
+          globOptions: {
+            dot: true,
+            ignore: ['**/.DS_*'],
+          },
+        },
       ],
     }),
   ],
