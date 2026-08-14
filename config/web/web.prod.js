@@ -26,33 +26,9 @@ module.exports = merge(webConfig, webProdConfig, {
     new GenerateSW({
       maximumFileSizeToCacheInBytes: 1024 * 1024 * 5,
       navigateFallback: 'index.html',
-      runtimeCaching: [
-        {
-          urlPattern: /^https:\/\/pyodide.oss-cn-beijing.aliyuncs.com\//,
-          handler: 'CacheFirst',
-          options: {
-            cacheName: 'cached-pyodide',
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
-          },
-        },
-        {
-          urlPattern: /^https:\/\/cdn.staticfile.org\//,
-          handler: 'CacheFirst',
-          options: {
-            cacheName: 'cached-cdn',
-            // networkTimeoutSeconds: 2,
-            // expiration: {
-            //   maxEntries: 50,
-            //   maxAgeSeconds: 30 * 24 * 60 * 60,
-            // },
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
-          },
-        },
-      ],
+      // Pyodide is served from the app's own static assets (see
+      // PythonRuntime/index.ts), so it's already covered by GenerateSW's
+      // default precaching — no separate runtime-caching rule needed.
     }),
 
     new HtmlWebpackPlugin({
