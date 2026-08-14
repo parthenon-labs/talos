@@ -7,7 +7,7 @@ const webProd = require('./web.prod');
 // (https://<user>.github.io/<repo>/). Only the asset publicPath changes;
 // routing is HashRouter (see src/App.tsx) so no server-side rewrite /
 // SPA fallback is needed for a GitHub Pages project subpath.
-// PUBLIC_URL_PREFIX (e.g. '/cp-fe-demo') must match the GitHub Pages repo
+// PUBLIC_URL_PREFIX (e.g. '/talos') must match the GitHub Pages repo
 // name — pass it via the build:pages script, not by editing this file.
 const publicUrlPrefix = process.env.PUBLIC_URL_PREFIX || '';
 if (!publicUrlPrefix) {

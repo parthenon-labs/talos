@@ -9,7 +9,7 @@ class IDB {
   #db: Promise<IDBPDatabase<SaveChapterCodeData>>;
 
   constructor() {
-    this.#db = openDB<SaveChapterCodeData>('cp-fe', 1, {
+    this.#db = openDB<SaveChapterCodeData>('talos', 1, {
       upgrade(db) {
         db.createObjectStore('chapter-code', {
           keyPath: ['courseId', 'chapterId', 'childId'],
