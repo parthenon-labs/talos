@@ -60,11 +60,16 @@ class Role {
     return this.#entryAnimation(position, idle);
   }
 
+  // Level switching waits on this walk-off before the next level may
+  // appear, and the chapter list stays disabled for its whole duration, so
+  // its length is the switch latency almost by itself — the actual work
+  // (GLB parse, scene setup) is well under 200ms. Keep it long enough to
+  // read as a walk, short enough not to feel like a stall.
   outAnimation() {
     this.roleAction(RoleAnimationKey.WalkInPlace);
     return gsap.to(this.#role.position, {
       ease: 'none',
-      duration: 2,
+      duration: 0.7,
       x: -10,
       y: 5,
     });
@@ -76,7 +81,7 @@ class Role {
     await gsap.fromTo(
       this.#role.position,
       { x: 10, y: 5, z: 0 },
-      { duration: 2, x, y, z },
+      { duration: 0.7, x, y, z },
     );
     idle && this.roleAction(RoleAnimationKey.Idle2);
   }

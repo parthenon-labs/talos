@@ -8,7 +8,9 @@ import customBlock from './customBlock';
 Blockly.Blocks.import_control = <Blockly.Block>{
   init() {
     this.appendDummyInput().appendField('Import character module');
-    this.setTooltip('Import the character controls before using movement commands');
+    this.setTooltip(
+      'Import the character controls before using movement commands',
+    );
     this.setColour('#f46767');
     this.setPreviousStatement(true);
     this.setNextStatement(true);

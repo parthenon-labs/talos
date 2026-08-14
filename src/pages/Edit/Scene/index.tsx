@@ -124,6 +124,11 @@ const Scene = ({ chapterContent }: SceneProps) => {
     [pythonRuntimeReady, running],
   );
 
+  const runButtonLabel = useMemo(() => {
+    if (!pythonRuntimeReady) return 'Loading';
+    return running ? 'Running' : 'Run';
+  }, [pythonRuntimeReady, running]);
+
   const clickRun = useDebounceCallback(() => {
     dispatch(setRunning());
     pythonRuntime?.current?.run();
@@ -160,7 +165,7 @@ const Scene = ({ chapterContent }: SceneProps) => {
               endIcon={<PlayArrowIcon />}
               onClick={clickRun}
             >
-              {!pythonRuntimeReady ? 'Loading' : running ? 'Running' : 'Run'}
+              {runButtonLabel}
             </RunButton>
           </div>
           <div className="absolute left-10 top-10 flex justify-center">

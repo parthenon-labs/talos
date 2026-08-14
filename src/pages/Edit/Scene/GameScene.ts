@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import Role, { RolePosition } from './Role/Role';
 import RoleCommandQueue from './Role/CommandQueue';
 import WorldCommandQueue from './World/CommandQueue';
-import { rgba, createGrid } from './utils';
+import { rgba, createGrid, loadModelContainer } from './utils';
 import { RoleAnimationKey, ModelKey, roleYPosition } from './constant';
 import { store } from '@/store';
 import { localStaticBaseUrl } from '@/utils/constant';
@@ -48,6 +48,10 @@ class GameScene extends BABYLON.Scene {
   #world!: World;
 
   #customWorldFlag = false;
+
+  #sceneContainer: BABYLON.Nullable<BABYLON.AssetContainer> = null;
+
+  #glow: BABYLON.Nullable<BABYLON.GlowLayer> = null;
 
   constructor(engine: BABYLON.Engine) {
     super(engine);
@@ -154,16 +158,12 @@ class GameScene extends BABYLON.Scene {
     return <BABYLON.Mesh[]>(this.getTransformNodeById(id)?.getChildren() ?? []);
   }
 
-  async #makeScene(url: string) {
-    const filepathArr = url.split('/');
-    const filename = filepathArr.at(-1);
-    const filepath = filepathArr.slice(0, filepathArr.length - 1).join('/');
-
-    await BABYLON.SceneLoader.AppendAsync(`${filepath}/`, filename, this);
+  async #makeScene(containerPromise: Promise<BABYLON.AssetContainer>) {
+    const container = await containerPromise;
+    container.addAllToScene();
+    // Kept so the next switch can dispose exactly what this level added.
+    this.#sceneContainer = container;
     this.#entryAnimation();
-
-    // const scene = this.getTransformNodeById(ModelKey.scene)!;
-    // scene
 
     const position = this.#getRoleStartPosition();
     if (this.#role) {
@@ -176,8 +176,12 @@ class GameScene extends BABYLON.Scene {
   }
 
   #initSceneContent() {
-    const glow = new BABYLON.GlowLayer('glow', this);
-    glow.intensity = 2;
+    // One glow layer per scene, not per level load — it's a full-screen
+    // pass, and re-creating it stacked up redundant ones all session.
+    if (!this.#glow) {
+      this.#glow = new BABYLON.GlowLayer('glow', this);
+      this.#glow.intensity = 2;
+    }
     this.#playSceneAnimation();
     this.#getRoadRange();
     this.#makeCoin();
@@ -188,7 +192,7 @@ class GameScene extends BABYLON.Scene {
     return gsap.fromTo(
       this.getTransformNodeById(ModelKey.scene)!.position,
       { y: 15 },
-      { y: 0, duration: 0.8 },
+      { y: 0, duration: 0.7 },
     );
   }
 
@@ -327,21 +331,41 @@ class GameScene extends BABYLON.Scene {
     if (!destroySceneModel) return;
     await Promise.all([
       gsap.to(destroySceneModel?.position, {
-        duration: 0.8,
+        // Matched to the role's walk-off so neither one alone extends how
+        // long the chapter list stays disabled.
+        duration: 0.7,
         y: -25,
       }),
       this.#role.outAnimation(),
     ]);
     store.dispatch(clearWallet());
-    destroySceneModel?.dispose();
+    if (this.#sceneContainer) {
+      // Also releases materials/textures/animation groups. Disposing the
+      // root node alone (as this used to) took only the meshes, so each
+      // switch leaked a few of each, permanently.
+      this.#sceneContainer.dispose();
+      this.#sceneContainer = null;
+    } else {
+      destroySceneModel?.dispose(false, true);
+    }
   }
 
   async loadSceneModel(sceneUrl?: string) {
+    // Start the fetch/parse before awaiting the exit animation so they
+    // overlap: the exit is a fixed wait, so loading strictly after it just
+    // added ~130ms warm / ~600ms cold on top. The catch keeps a failure
+    // from surfacing as an unhandled rejection mid-animation; it's still
+    // reported through the #makeScene await below.
+    const containerPromise = sceneUrl
+      ? loadModelContainer(this, `${localStaticBaseUrl}${sceneUrl}`)
+      : null;
+    containerPromise?.catch(() => {});
+
     await this.#destroySceneModel();
     // 如果有场景模型路径，则加载场景模型，初始化角色位置，金币状态等。
     // 否则场景为空,不初始化角色位置，金币状态。用户可能通过我们提供的tile-Map自己构建场景
-    if (sceneUrl) {
-      await this.#makeScene(`${localStaticBaseUrl}${sceneUrl}`);
+    if (containerPromise) {
+      await this.#makeScene(containerPromise);
       return;
     }
     const world = new World(this);

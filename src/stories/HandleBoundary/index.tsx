@@ -31,7 +31,9 @@ const HandleBoundary = <T extends unknown, E = unknown>({
   return (
     <div className="flex h-full w-full flex-col items-center justify-center">
       <img className="w-[200px]" src={errorImage} alt="error_image" />
-      <p className="my-4 text-primary">Something went wrong. Please try again.</p>
+      <p className="my-4 text-primary">
+        Something went wrong. Please try again.
+      </p>
       <Button onClick={() => query.refetch()} variant="outlined">
         Retry
       </Button>

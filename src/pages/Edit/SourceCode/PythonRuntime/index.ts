@@ -4,10 +4,7 @@ import { store } from '@/store';
 import GameScene from '../../Scene/GameScene';
 import { setPythonRuntime, setRunning } from '../../store';
 import appendScript from '@/utils/appendScript';
-import {
-  localStaticBaseUrl,
-  errorToastOptions,
-} from '@/utils/constant';
+import { localStaticBaseUrl, errorToastOptions } from '@/utils/constant';
 import { getInfoFromSyntaxError, transformPyodideRunError } from './utils';
 
 const indexURL = `${localStaticBaseUrl}pyodide/`;
@@ -107,12 +104,7 @@ class PythonRuntime {
         toast.dismiss();
         toast.error(errorMessage, errorToastOptions);
       })
-      .finally(async () => {
-        const { default: Control } = await import(
-          '@/pages/Edit/Scene/Role/Command'
-        );
-        Control.restore();
-      });
+      .finally(() => Control.restore());
   }
 
   async checkSyntax(code?: string) {

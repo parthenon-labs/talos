@@ -1,5 +1,6 @@
 import {
   Scene,
+  SceneLoader,
   Color4,
   Color3,
   MeshBuilder,
@@ -15,6 +16,16 @@ import { setPositionTip, clearPositionTip } from '../store';
 export const rgba = (r: number, g: number, b: number, a: number) => {
   const color = [r, g, b];
   return new Color4(...color.map(i => i / 255), a);
+};
+
+// Parses a model without adding it to the scene, so the work can overlap
+// whatever else is in flight — see GameScene.loadSceneModel.
+export const loadModelContainer = (scene: Scene, url: string) => {
+  const filepathArr = url.split('/');
+  const filename = filepathArr.at(-1);
+  const filepath = filepathArr.slice(0, filepathArr.length - 1).join('/');
+
+  return SceneLoader.LoadAssetContainerAsync(`${filepath}/`, filename, scene);
 };
 
 export const showAxis = (scene: Scene, size: number) => {

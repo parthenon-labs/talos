@@ -56,7 +56,10 @@ class CommandComputed {
       this.currentPosition = currentPosition;
       if (!this.verifiedPosition(currentPosition)) {
         this.block = true;
-        toast.error('Place the character on a walkable tile', errorToastOptions);
+        toast.error(
+          'Place the character on a walkable tile',
+          errorToastOptions,
+        );
       }
     }
     !this.block &&

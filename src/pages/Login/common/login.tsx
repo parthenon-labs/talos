@@ -194,7 +194,11 @@ export const useLogin = (param?: string) => {
       {componentType === 'weixin' && (
         <div className="flex justify-center">
           {loginWxUrl && (
-            <iframe src={loginWxUrl} title="WeChat sign-in" style={{ height: 400 }} />
+            <iframe
+              src={loginWxUrl}
+              title="WeChat sign-in"
+              style={{ height: 400 }}
+            />
           )}
         </div>
       )}
