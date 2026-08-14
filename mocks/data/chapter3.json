@@ -15,23 +15,13 @@
         "icon": "static/images/list-icon/robot-2-b.svg"
       },
       {
-        "text": "Coins and Characters",
-        "_id": "3",
-        "icon": "static/images/list-icon/robot-3-7.svg"
-      },
-      {
-        "text": "Create Your Scene",
-        "_id": "4",
-        "icon": "static/images/list-icon/robot-3-g-search.svg"
-      },
-      {
         "text": "Stack Tiles",
-        "_id": "5",
+        "_id": "3",
         "icon": "static/images/list-icon/robot-3-g.svg"
       },
       {
         "text": "Add Decorations",
-        "_id": "6",
+        "_id": "4",
         "icon": "static/images/list-icon/robot-3-help.svg"
       }
     ]

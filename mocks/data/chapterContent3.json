@@ -2,37 +2,25 @@
   {
     "chapterId": "1",
     "childId": "1",
-    "description": "",
+    "description": "#### Place Tiles\n\n**Goal:** Build your first patch of ground out of code.\n\nThis course starts with an empty sky instead of a prebuilt level — the world is whatever you construct. `make` puts one tile at a grid position, and `Block` says which tile to use and which way it faces.\n\n```python\nfrom world import make, Block\n\nmake(Block('floor', '+x'), 0, 0)\n```\n\nThe two numbers are the grid coordinates `x` and `z`. Loop over them to lay a whole platform, then press **Run** to watch it drop into place.\n\n```python\nfor x in range(4):\n    for z in range(3):\n        make(Block('floor', '+x'), x, z)\n```\n\nWrite this course in **Python** — the block palette only carries character commands, not world-building ones.",
     "sceneUrl": ""
   },
   {
     "chapterId": "1",
     "childId": "2",
-    "description": "",
+    "description": "#### Tile Types\n\n**Goal:** Learn the tile set, and which way a tile faces.\n\nOpen the 🧱 panel on the right edge of the scene to preview every tile in 3D. Each card shows the name you pass to `Block`.\n\n```python\nfrom world import make, Block\n\nmake(Block('floor', '+x'), 0, 0)\nmake(Block('road', '+x'), 1, 0)\nmake(Block('rotateRoad', '-z'), 2, 0)\nmake(Block('woodenBridge', '+x'), 3, 0)\nmake(Block('stoneBridge', '+x'), 4, 0)\nmake(Block('treeFloor', '+x'), 5, 0)\n```\n\nThe second argument is the facing, and it must be one of the strings `'+x'`, `'-z'`, `'-x'` or `'+z'` — a plain number will leave the tile unrotated. Facing decides which way paths and bridges run; square ground tiles look the same whichever you choose.",
     "sceneUrl": ""
   },
   {
     "chapterId": "1",
     "childId": "3",
-    "description": "",
+    "description": "#### Stack Tiles\n\n**Goal:** Build upwards with a fourth argument.\n\n`make` takes an optional height after `x` and `z`. Level `0` sits on the ground, and each step up adds `1`.\n\n```python\nfrom world import make, Block\n\nfor x in range(3):\n    make(Block('floor', '+x'), x, 0)\n\nmake(Block('floor', '+x'), 1, 0, 1)\nmake(Block('road', '+x'), 1, 0, 2)\n```\n\nTiles drop in one after another in the order you wrote them, so place a layer before the layer that sits on top of it.",
     "sceneUrl": ""
   },
   {
     "chapterId": "1",
     "childId": "4",
-    "description": "",
-    "sceneUrl": ""
-  },
-  {
-    "chapterId": "1",
-    "childId": "5",
-    "description": "",
-    "sceneUrl": ""
-  },
-  {
-    "chapterId": "1",
-    "childId": "6",
-    "description": "",
+    "description": "#### Add Decorations\n\n**Goal:** Finish a scene with scenery and coins.\n\n`treeFloor` is ground with trees already on it, and the two bridge tiles span the gap between separate platforms. `Coin` takes no facing — it floats above the tile you place it on.\n\n```python\nfrom world import make, Block, Coin\n\nfor x in range(3):\n    make(Block('treeFloor', '+x'), x, 0)\n\nmake(Block('woodenBridge', '+x'), 3, 0)\nmake(Block('floor', '+x'), 4, 0)\nmake(Coin(), 4, 0)\n```\n\nThe counter above the scene totals every coin you place. Combine what you have learned across these four lessons and build a scene of your own.",
     "sceneUrl": ""
   }
 ]
