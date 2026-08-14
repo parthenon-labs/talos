@@ -18,7 +18,7 @@ const mswReady = worker
       options: {
         // Trailing slash matters: a SW's scope can never be broader than
         // the directory containing its script, so this must match the
-        // script's own path exactly (e.g. '/cp-fe/', not '/cp-fe').
+        // script's own path exactly (e.g. '/talos/', not '/talos').
         scope: `${publicPrefix}/`,
       },
     },

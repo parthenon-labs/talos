@@ -1,10 +1,3 @@
-/*
- * @Author: ArdenZhao
- * @Date: 2021-12-25 14:02:34
- * @LastEditors: Do not edit
- * @LastEditTime: 2021-12-25 14:10:00
- * @FilePath: /cp-fe/src/pages/Edit/SourceCode/Markdown.tsx
- */
 import ReactMarkdown from 'react-markdown';
 
 interface MarkdownProps {
