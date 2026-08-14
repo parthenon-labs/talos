@@ -2,7 +2,7 @@
   {
     "chapterId": "1",
     "childId": "1",
-    "description": "#### Calling Functions\n\n**Goal:** Move Byte and collect the coin by calling functions.\n\nByte needs your code to navigate the level. Use blocks or Python to control the character.\n\n1. Import the character controls first — in Blocks, drag in the **Import character module** block; in Python, add `from role import moveForward, turnLeft, turnRight, collectCoin, isCoin, isBlocked, isRightBlocked`\n2. Find the coin in the world\n3. Use `moveForward` and `collectCoin`\n4. Select **Run** below the scene",
+    "description": "#### Calling Functions\n\n**Goal:** Move Byte and collect the coin by calling functions.\n\nByte needs your code to navigate the level. Use blocks or Python to control the character. (The editor already has the character controls imported for you — that's the **Import character module** block, or the `from role import ...` line in Python.)\n\n1. Find the coin in the world\n2. Use `moveForward` and `collectCoin`\n3. Select **Run** below the scene",
     "sceneUrl": "static/model/1_1.glb"
   },
   {
