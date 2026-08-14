@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import Blockly from 'blockly';
 import Python from 'blockly/python';
-import locale from 'blockly/msg/zh-hans';
+import locale from 'blockly/msg/en';
 import { localStaticBaseUrl } from '@/utils/constant';
 import { useAppSelector } from '@/hooks/state';
 import 'blockly/blocks';
